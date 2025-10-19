@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 
 export default function BookEdit({ book, onSubmit }) {
-    const [title, setTitle] = useState("");
+    const [title, setTitle] = useState(book.title);
 
     const handleChange = (e) => {
         setTitle(e.target.value)
@@ -10,7 +10,6 @@ export default function BookEdit({ book, onSubmit }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
         onSubmit(book.id, title);
     }
 

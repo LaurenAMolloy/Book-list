@@ -20,13 +20,15 @@ function BookShow({ book, onDelete, onEdit }){
 
     let content = <h3>{book.title}</h3>
     if(showEdit) {
-        content = <BookEdit onEdit={handleSubmit} book={book} />
+        content = <BookEdit onSubmit={handleSubmit} book={book} />
     }
 
 return (
     <>
-    <div className="book-show">{content}
-    <div>Book Content</div>
+    <div className="book-show">
+        <img alt="books" src={`https://picsum.photos/seed/${book.id}/200/300`}>
+        </img>
+    <div>{content}</div>
     <div className="actions">
         <button className="edit" onClick={handleEditClick}>Edit</button>
         <button className='delete' onClick={handleDeleteClick}>
